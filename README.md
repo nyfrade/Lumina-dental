@@ -1,79 +1,189 @@
-# Lumina Dental
+# LuminaClinic 🦷✨
 
-**A modern, react-based appointment scheduling application for a dental clinic.**
+**A web-based dental clinic appointment system built for managing patients, appointments, and staff workflows efficiently.**  
 
-> 🚧 **Work in Progress:** This project is currently under active development.
->
-> **Author:** Anthony Frade
->
-> **Project Type:** Personal portfolio project
+> **Author:** Anthony Frade  
+> **Project type:** Personal project  
+> **Status:** Work-in-progress  
 
-## 📖 Overview
-Lumina Dental is a comprehensive appointment management system designed to demonstrate advanced react patterns and state management. The goal is to move away from standard, rigid medical software and create a fluid, user-friendly experience for both patients and clinic staff.
+**Note:** This project uses the **[Lucide icon library](https://lucide.dev/)** for clean and consistent icons across the interface. The `node_modules` folder is **not included** in this repository and must be installed locally.  
 
-The application distinguishes between two primary user roles: **Patients** (focused on ease of access) and **Staff** (focused on data management and scheduling efficiency).
-
-## 🚀 Planned Features
-
-### 1. Landing & Authentication
-* **Immersive Entry:** A "welcome" experience featuring smooth fade-in animations and a distraction-free interface.
-* **Role-Based Access:** A centralized login portal that routes users to the correct environment:
-    * **Patient Access:** For booking and self-management.
-    * **Staff Access:** For the administrative dashboard.
-
-### 2. Patient Module
-* **Smart Scheduling Form:** A clean interface to book appointments (Cleaning, Braces, Check-up, etc.).
-* **Automated Age Calculation:** Logic that calculates patient age dynamically based on Date of Birth to minimize data redundancy.
-* **Appointment Management:** Patients can retrieve existing appointments via Email or ID search.
-* **Restricted Editing:** Patients can modify logistics (Time, Date, Address) but cannot access internal clinic notes or administrative flags.
-
-### 3. Staff Dashboard (Admin)
-* **Dual-View Visualization:**
-    * **Calendar View:** A full month-grid visualization of the clinic's schedule.
-    * **List View:** A linear, detailed list of all appointments.
-* **Advanced Filtering:** Tools to view appointments by Day, Week, or Month.
-* **Search Functionality:** robust search by Patient Name, Phone, Email, or Appointment Type.
-* **Administrative Actions:**
-    * Confirm/Verify appointments.
-    * Add internal/private notes to patient files.
-    * Delete or Reschedule appointments.
-
-### 4. Data Architecture
-* **Centralized State:** A unified data structure handling complex patient objects (ID, specific dates, confirmation status).
-* **Persistence:** Utilization of `localStorage` to simulate backend persistence during the development phase.
-
-## 🛠️ Tech Stack
-* **Core:** React (Functional Components + Hooks)
-* **Language:** JavaScript (ES6+)
-* **Styling:** CSS Modules / Styled Components
-* **Icons:** Lucide React
-* **Routing:** React Router
-
-## 🏗️ Development Roadmap
-I am currently following a "Logic-First" approach to ensure stability before implementing the final UI design.
-
-- [ ] **Phase 1: Core Architecture** (Data models, state logic, dummy data generation)
-- [ ] **Phase 2: Logic Implementation** (CRUD operations, filtering algorithms, age calculation)
-- [ ] **Phase 3: Admin Dashboard** (Building the Staff views and management tools)
-- [ ] **Phase 4: Patient Interface** (Forms, validation, and user flow)
-- [ ] **Phase 5: UI/UX Refinement** (Animations, responsive layout, dark mode integration)
-
-## 📦 Installation & Setup
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/yourusername/lumina-dental.git](https://github.com/yourusername/lumina-dental.git)
-    ```
-
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
-
-3.  **Run the application:**
-    ```bash
-    npm start
-    ```
 
 ---
-*© 2025 Anthony Frade. All Rights Reserved.*
+
+## Overview 📋
+
+LuminaClinic is a modern web application designed to streamline dental clinic operations. It helps staff manage appointments, view schedules, and update patient records while allowing patients to book and manage their appointments easily. The system emphasizes clarity, speed, and a visually appealing interface.
+
+Two main user roles:  
+
+* **🧑‍⚕️ Staff:** Manage appointments, view schedules, update records.  
+* **🧑‍🤝‍🧑 Patients:** Book and manage their own appointments.  
+
+A key feature is **procedure-specific color coding**, which is applied consistently across calendars, lists, and forms to make appointment types easy to identify.  
+
+The interface is clean, responsive, and easy to navigate, with dynamic colors for procedures and clear modals for actions.
+
+---
+
+## User interface 🎨
+
+* **Staff Dashboard:** Sidebar navigation, month/week/day calendar views, appointment list table, search and filters, modals for adding/editing appointments.  
+* **Patient Portal:** Simple appointment form, lookup, and basic editing.  
+* **Design Highlights:** Clean UI with responsive layout, toast notifications, dynamic colors, and modals with high z-index for clarity.  
+
+---
+
+## Implemented features ✅
+
+**User management**  
+
+* [x] Patient authentication/login  
+* [x] Staff authentication/login  
+
+**Appointment scheduling & management**  
+
+* [x] Patient-facing form  
+* [x] Staff-facing form with calendar pre-fill  
+* [x] Lookup and edit appointments (patients & staff)  
+* [x] Update status (Pending, Confirmed, Completed)  
+* [x] Soft-delete, restore, and hard-delete appointments  
+
+**Calendar views**  
+
+* [x] Month, Week, Day views  
+* [x] Navigation (previous/next period, Today button)  
+* [x] Toggle between views  
+
+**Staff dashboard table**  
+
+* [x] Search, filter by date or procedure, sorting  
+* [x] Pagination  
+
+**Procedure color coding**  
+
+* [x] Applied in calendar, table, and modals  
+* [x] Dynamic text color for readability  
+
+**UI & experience**  
+
+* [x] Responsive design  
+* [x] Toast notifications  
+* [x] Prominent modals for new appointments  
+
+**Backend / Utilities**  
+
+* [x] Mock data for users, appointments, procedures  
+* [x] Basic form validation  
+
+---
+
+## Known issues ⚠️
+
+**Color & UI**  
+
+* [ ] Color-code procedures are incosistent / not showing
+* [ ] Potential color contrast issues in some combinations  
+* [ ] New appointment modal is transparent  
+
+**Data & Architecture**  
+
+* [ ] No persistent backend; data lost on refresh  
+* [ ] Hardcoded mock data  
+* [ ] Limited error handling  
+* [ ] No API integration  
+* [ ] No automated tests  
+
+**File Structure**  
+
+* [ ] Inconsistent component grouping  
+* [ ] Mixed concerns in some files  
+* [ ] Duplicate styling logic  
+* [ ] Deep nesting in pages directory  
+
+**Other**  
+
+* [ ] Accessibility not explicitly handled  
+* [ ] No performance optimizations  
+* [ ] Browser compatibility not fully tested  
+
+---
+
+## Possible future implementations 🚀
+
+**Backend & data**  
+
+* [ ] API integration  
+* [ ] Database connection (PostgreSQL, MongoDB, MySQL)  
+
+**Appointments**  
+
+* [ ] Recurring appointments  
+* [ ] Reminders (SMS/email)  
+* [ ] Conflict detection  
+* [ ] Drag-and-drop rescheduling  
+* [ ] Waiting list management  
+* [ ] Cancellation policies  
+
+**Users & roles**  
+
+* [ ] Staff account management  
+* [ ] Detailed patient profiles  
+* [ ] Role-based access control  
+
+**Calendar**  
+
+* [ ] Multi-doctor view  
+* [ ] Printable views  
+* [ ] Custom working hours  
+
+**Reports & analytics**  
+
+* [ ] Appointment stats, revenue tracking, doctor performance  
+
+**Communication & integration**  
+
+* [ ] Internal messaging  
+* [ ] Patient-staff messaging  
+* [ ] Payment gateway  
+* [ ] EHR system integration  
+* [ ] Third-party calendar sync  
+
+**UI/UX**  
+
+* [ ] Custom theming  
+* [ ] Advanced search  
+* [ ] Accessibility compliance  
+* [ ] Internationalization  
+
+---
+
+## Priority list 📌
+
+* [ ] **Organize file structure** – group components by feature, reduce nesting  
+* [ ] **Clean code** – separate UI, logic, and utilities clearly, remove duplicates  
+* [ ] **Document code** – use Doxygen for functions, components, and hooks  
+* [ ] **Document project** – create a PDF explaining features, structure, and usage  
+
+---
+
+## Installation & setup ⚙️
+
+1. **Clone the repository:**
+   ```bash
+    git clone [https://github.com/yourusername/lumina-dental.git](https://github.com/yourusername/lumina-dental.git)
+     ```
+   
+2. **Install dependencies:**
+   ```bash
+    npm install
+   ```
+   
+4. **Run the application:**
+   ```bash
+    npm start
+   ```
+
+   
+---
+© 2025 Anthony Frade. All Rights Reserved.
