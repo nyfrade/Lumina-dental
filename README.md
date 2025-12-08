@@ -81,7 +81,7 @@ The interface is clean, responsive, and easy to navigate, with dynamic colors fo
 
 **Color & UI**  
 
-* [ ] Color-code procedures are incosistent / not showing
+* [ ] Color-code procedures are incosistent / buggy
 * [ ] Potential color contrast issues in some combinations  
 * [ ] New appointment modal is transparent
 * [ ] When switching between days in the calendar it doesn't update the (Today) box
