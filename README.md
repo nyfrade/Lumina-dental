@@ -13,16 +13,15 @@
 
 ## Overview 📋
 
-LuminaClinic is a modern web application designed to streamline dental clinic operations. It helps staff manage appointments, view schedules, and update patient records while allowing patients to book and manage their appointments easily. The system emphasizes clarity, speed, and a visually appealing interface.
+LuminaDental is a modern web application designed to streamline dental clinic operations. It helps staff manage appointments, view schedules, and update patient records while allowing patients to book and manage their appointments easily. The system emphasizes clarity, speed, and a visually appealing interface.
 
 Two main user roles:  
 
 * **🧑‍⚕️ Staff:** Manage appointments, view schedules, update records.  
 * **🧑‍🤝‍🧑 Patients:** Book and manage their own appointments.  
 
-A key feature is **procedure-specific color coding**, which is applied consistently across calendars, lists, and forms to make appointment types easy to identify.  
 
-The interface is clean, responsive, and easy to navigate, with dynamic colors for procedures and clear modals for actions.
+The interface is clean, responsive, and easy to navigate, with dynamic colors for procedures and clear modals for actions inspired by the Apple UI.
 
 ---
 
@@ -84,7 +83,8 @@ The interface is clean, responsive, and easy to navigate, with dynamic colors fo
 
 * [ ] Color-code procedures are incosistent / not showing
 * [ ] Potential color contrast issues in some combinations  
-* [ ] New appointment modal is transparent  
+* [ ] New appointment modal is transparent
+* [ ] When switching between days in the calendar it doesn't update the (Today) box
 
 **Data & Architecture**  
 
