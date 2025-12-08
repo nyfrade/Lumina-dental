@@ -1,0 +1,148 @@
+/* src/pages/patientPortal/patientPortal.module.css */
+.portalContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  padding: 40px;
+}
+
+.portalBox {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.portalNav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+.portalNav button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.portalNav button:hover {
+  background-color: #f0f2f5;
+}
+
+.portalNav button.active {
+  background-color: #007aff;
+  color: white;
+}
+
+.editView {
+  padding: 40px;
+}
+
+.editView h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.lookupForm {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.lookupForm .inputGroup {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.lookupForm button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #007aff;
+  color: white;
+  cursor: pointer;
+}
+
+.editForm h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.editForm .inputGroup {
+  margin-bottom: 15px;
+}
+
+.editForm label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #666;
+}
+
+.editForm input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+.editForm .buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.editForm button {
+  width: 48%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #007aff;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancelButton {
+  background-color: #ff3b30 !important;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  width: 400px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+}
+
+.modalContent h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}

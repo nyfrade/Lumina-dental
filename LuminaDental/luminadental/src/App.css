@@ -1,0 +1,65 @@
+
+.App {
+  position: relative;
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out, slideOut 0.3s ease-in 2.7s forwards;
+}
+
+.toast.success {
+  background-color: #27ae60;
+}
+
+.toast.error {
+  background-color: #c0392b;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(120%);
+  }
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.welcome-buttons {
+  margin: 20px 0;
+}
+
+.welcome-buttons button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+.staff-login {
+  margin-top: 50px;
+}

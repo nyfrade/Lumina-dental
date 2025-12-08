@@ -1,0 +1,56 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  /* Color Palette */
+  --primary-bg: #FFFFFF;       /* White */
+  --primary-text: #1d1d1f;      /* Dark Gray */
+  --accent-color: #007aff;      /* Soft Blue */
+  --accent-color-darker: #005ecb; /* Darker Blue */
+  --glass-bg: rgba(255, 255, 255, 0.7); /* Light, translucent background for glass effect */
+  --border-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black border */
+  --error-color: #e57373;        /* For validation messages */
+
+  /* Typography */
+  --font-main: 'Roboto', sans-serif;
+
+  /* Transitions */
+  --transition-speed: 0.3s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-text);
+  font-weight: 500;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+  color: var(--accent-color-darker);
+}
+
+/* Global class for a container that uses the glassmorphism effect */
+.glass-container {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}

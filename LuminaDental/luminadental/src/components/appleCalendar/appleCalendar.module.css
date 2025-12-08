@@ -1,0 +1,374 @@
+/* luminadental/src/components/appleCalendar/appleCalendar.module.css */
+
+.appleCalendar {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  color: #1c1c1e;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.navButtons button {
+  background-color: #f0f0f0;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 8px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #3c3c43;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.navButtons button:hover {
+  background-color: #e0e0e0;
+  border-color: #c0c0c0;
+}
+
+.currentPeriod {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1c1c1e;
+}
+
+.viewSelector button {
+  background-color: #f0f0f0;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 8px 15px;
+  margin: 0 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #3c3c43;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.viewSelector button.active {
+  background-color: #007aff;
+  color: #fff;
+  border-color: #007aff;
+}
+
+.viewSelector button:hover:not(.active) {
+  background-color: #e0e0e0;
+  border-color: #c0c0c0;
+}
+
+.addButton {
+  background-color: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.addButton:hover {
+  background-color: #005ecb;
+}
+
+/* Month View */
+.monthView {
+  width: 100%;
+}
+
+.daysOfWeekNames {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.dayOfWeekHeader {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #8e8e93;
+}
+
+.monthGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px; /* Thin lines between cells */
+  background-color: #e0e0e0; /* Grid lines color */
+  border-radius: 8px;
+  overflow: hidden; /* For rounded corners */
+}
+
+.monthDayCell {
+  background-color: #fff;
+  min-height: 100px;
+  padding: 8px;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  transition: background-color 0.1s;
+}
+
+.monthDayCell:nth-child(7n) {
+  border-right: none; /* No right border on last column */
+}
+
+.monthDayCell:nth-last-child(-n + 7) {
+  border-bottom: none; /* No bottom border on last row */
+}
+
+
+.monthDayCell.empty {
+  background-color: #f8f8f8;
+  color: #c0c0c0;
+}
+
+.dayNumberContainer {
+  align-self: flex-end; /* Position day number to the top right */
+  margin-bottom: 5px;
+}
+
+.dayNumber {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1c1c1e;
+}
+
+.monthDayCell.today .dayNumber {
+  background-color: #007aff;
+  color: #fff;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.appointmentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* Space between events */
+  flex-grow: 1; /* Allow list to take up remaining space */
+  overflow-y: auto; /* Enable scrolling for many events */
+  max-height: calc(100% - 35px); /* Adjust based on dayNumberContainer height */
+  padding-right: 2px; /* Prevent scrollbar from overlapping content */
+}
+
+.monthEvent {
+  width: calc(100% - 4px); /* Full width minus some padding */
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 0.7rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #fff; /* White text for contrast on colored background */
+  cursor: pointer;
+  box-sizing: border-box;
+  opacity: 0.9;
+  transition: opacity 0.1s;
+}
+
+.monthEvent:hover {
+  opacity: 1;
+}
+
+.eventTime {
+  font-weight: 600;
+  display: inline-block; /* To allow text-overflow with eventName */
+  margin-right: 4px;
+}
+
+.eventName {
+  display: inline-block;
+  opacity: 0.9;
+}
+
+/* Week View & Day View */
+.weekHeader, .dayHeader {
+  display: grid;
+  grid-template-columns: 50px repeat(7, 1fr); /* Time column + 7 days */
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.dayHeader {
+    grid-template-columns: 50px 1fr;
+}
+
+.timeColumnHeader {
+  /* Empty for alignment */
+}
+
+.dayHeader .dayName {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #8e8e93;
+  text-align: center;
+}
+
+.dayHeader .dayNumber {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1c1c1e;
+  text-align: center;
+}
+
+.weekGrid, .dayGrid {
+  display: grid;
+  grid-template-columns: 50px repeat(7, 1fr); /* Time column + 7 days */
+  position: relative;
+  min-height: 1200px; /* 24 hours * 50px/hour */
+  gap: 1px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dayGrid {
+    grid-template-columns: 50px 1fr;
+}
+
+
+.timeColumn {
+  background-color: #fff;
+  border-right: 1px solid #e0e0e0;
+}
+
+.hourSlot {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 5px;
+  font-size: 0.8rem;
+  color: #8e8e93;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dayColumn {
+  position: relative;
+  background-color: #fff;
+  border-right: 1px solid #f0f0f0;
+}
+
+.dayColumn:nth-child(8) { /* Last day in week view (Sunday) */
+  border-right: none;
+}
+
+.hourCell {
+  height: 50px;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative; /* For positioning event blocks */
+}
+
+.eventBlock {
+  position: absolute;
+  width: calc(100% - 4px); /* Account for padding/margin */
+  margin-left: 2px;
+  border-radius: 6px;
+  padding: 4px 6px;
+  font-size: 0.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+  color: #fff;
+  z-index: 10;
+  opacity: 0.9;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.eventBlock span {
+  display: block;
+}
+
+.eventTime {
+  font-weight: 600;
+}
+
+.eventName, .eventPatient {
+  font-size: 0.7rem;
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .appleCalendar {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navButtons, .viewSelector {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .currentPeriod {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .monthDayCell {
+    min-height: 80px;
+  }
+
+  .dayNumber {
+    font-size: 0.9rem;
+  }
+
+  .eventIndicators {
+    gap: 2px;
+  }
+
+  .eventDot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .weekGrid, .dayGrid {
+    min-height: 800px; /* Smaller for mobile */
+  }
+
+  .hourSlot {
+    height: 40px;
+  }
+
+  .hourCell {
+    height: 40px;
+  }
+
+  .eventBlock {
+    font-size: 0.65rem;
+    padding: 3px 5px;
+  }
+}

@@ -1,0 +1,51 @@
+/* src/components/input/input.module.css */
+.inputGroup {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.inputGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #1d1d1f; /* Dark text for labels */
+  font-weight: 500;
+}
+
+.inputGroup input[type="text"],
+.inputGroup input[type="email"],
+.inputGroup input[type="password"],
+.inputGroup input[type="tel"],
+.inputGroup input[type="date"],
+.inputGroup select,
+.inputGroup textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #d1d1d6; /* Light grey border */
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #1d1d1f; /* Dark text for input */
+  background-color: #ffffff; /* White background */
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box; /* Ensure padding doesn't increase width */
+}
+
+.inputGroup input[type="text"]::placeholder,
+.inputGroup input[type="email"]::placeholder,
+.inputGroup input[type="password"]::placeholder,
+.inputGroup input[type="tel"]::placeholder,
+.inputGroup input[type="date"]::placeholder,
+.inputGroup select::placeholder,
+.inputGroup textarea::placeholder {
+  color: #8e8e93; /* Lighter grey for placeholder text */
+}
+
+.inputGroup input[type="text"]:focus,
+.inputGroup input[type="email"]:focus,
+.inputGroup input[type="password"]:focus,
+.inputGroup input[type="tel"]:focus,
+.inputGroup input[type="date"]:focus,
+.inputGroup select:focus,
+.inputGroup textarea:focus {
+  border-color: #007aff; /* Blue border on focus */
+  box-shadow: 0 0

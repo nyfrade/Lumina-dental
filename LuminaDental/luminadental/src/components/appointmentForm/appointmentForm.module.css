@@ -1,0 +1,147 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .appointmentForm {
+    background-color: var(--background-color-light);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    color: var(--text-color);
+    z-index: 1001; /* Explicitly higher than modalOverlay */
+  }
+  
+  .formHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .formHeader h2 {
+    color: var(--primary-color);
+    margin: 0;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    color: var(--text-color-light);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+  }
+  
+  .closeButton:hover {
+    background-color: var(--hover-color);
+  }
+  
+  .inputGroup {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 8px 10px;
+    background-color: var(--input-background);
+  }
+
+  .inputGroup .labelWithIcon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-grow: 1;
+  }
+  
+  .inputGroup svg {
+    margin-right: 10px;
+    color: var(--icon-color);
+  }
+  
+  .inputGroup input,
+  .inputGroup select,
+  .inputGroup textarea {
+    border: none;
+    background: none;
+    flex-grow: 1;
+    font-size: 1rem;
+    padding: 5px 0;
+    color: var(--text-color);
+  }
+  
+  .inputGroup input:focus,
+  .inputGroup select:focus,
+  .inputGroup textarea:focus {
+    outline: none;
+  }
+  
+  .inputGroup label {
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+    margin-left: 10px;
+  }
+  
+  .inputGroup textarea {
+    resize: vertical;
+    min-height: 60px;
+  }
+  
+  .error {
+    color: var(--error-color);
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+    padding-left: 30px; /* Align with input text */
+  }
+  
+  .submitButton {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+  }
+  
+  .submitButton:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+  
+  .submitButton:disabled {
+    background-color: var(--button-disabled-color);
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+.procedureColorIndicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 10px;
+  border: 1px solid var(--border-color);
+}
