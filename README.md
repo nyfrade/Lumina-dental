@@ -1,4 +1,4 @@
-# LuminaClinic 🦷✨
+# LuminaDental 🦷✨
 
 **A web-based dental clinic appointment system built for managing patients, appointments, and staff workflows efficiently.**  
 
