@@ -2,6 +2,12 @@
 
 **A web-based dental clinic appointment system built for managing patients, appointments, and staff workflows efficiently.**  
 
+![Demo](LuminaDentalGif.gif)
+
+
+[▶️ Watch demo (video)](LuminaDental.mp4)
+
+
 > **Author:** Anthony Frade  
 > **Project type:** Personal project  
 > **Status:** Work-in-progress  
